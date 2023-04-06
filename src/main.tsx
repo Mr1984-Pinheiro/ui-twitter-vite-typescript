@@ -10,7 +10,8 @@ import {
   BookmarkSimple, 
   FileText,
   User, 
-  DotsThreeCircle 
+  DotsThreeCircle, 
+  Sparkle
   } from "@phosphor-icons/react";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -58,8 +59,23 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
           Tweet
         </button>
       </aside>
+
       <div className="content">
-        CONTENT
+        <main className="timeline">
+          <div className="timeline-header">
+            Home
+            <Sparkle />
+          </div>
+
+          <form className="new-tweet-form">
+            <label htmlFor="tweet">
+              <img src="https://github.com/Mr1984-Pinheiro.png" alt="Carlos Pinheiro" />
+              <textarea id='tweet' placeholder='O que que há velhinho?' />
+            </label>
+
+            <button type='submit'>Tweet</button>
+          </form>
+        </main>
       </div>
 
     </div>
