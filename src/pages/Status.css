@@ -8,6 +8,8 @@
 
 .answer-tweet-form label {
     display: flex;
+    flex: 1;
+    align-items: center;
     gap: 0.5rem;
 }
 
@@ -22,7 +24,7 @@
     border: 0;
     font-size: 1.25rem;
     font-weight: 500;
-    margin-top: 0.75rem;
+    margin-top: 1.25rem;
     resize: none; /*remover ícone que mostra ser redimencionavel */
 }
 

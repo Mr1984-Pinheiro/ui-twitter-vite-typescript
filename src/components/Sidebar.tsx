@@ -10,6 +10,7 @@ import {
     User, 
     DotsThreeCircle
     } from "@phosphor-icons/react";
+import { NavLink } from "react-router-dom";
 
 export function Sidebar () {
     return(
@@ -17,10 +18,10 @@ export function Sidebar () {
         <img className="logo" src={twitterLogo} alt="logo" />
 
         <nav className='main-navigation'>
-          <a className='active' href="">
+          <NavLink to="/">
             <House weight='fill' />
             Home
-            </a>
+            </NavLink>
           <a href="">
             <Hash /> 
             Explore
@@ -29,10 +30,10 @@ export function Sidebar () {
             <Bell />
             Notifications
           </a>
-          <a href="">
+          <NavLink to="/status">
             <Envelope />
             Messages
-          </a>
+          </NavLink>
           <a href="">
             <BookmarkSimple />
             Bookmarks
