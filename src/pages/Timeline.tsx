@@ -2,7 +2,7 @@ import { Tweet } from '../components/Tweet';
 import { Header } from '../components/Header';
 import { Separator } from '../components/Separator';
 import "./Timeline.css"
-import { FormEvent, useState } from 'react';
+import { FormEvent, KeyboardEvent, useState } from 'react';
 
 export function Timeline () {
   const [newTweet, setNewTweet] = useState(''); 
@@ -19,6 +19,13 @@ export function Timeline () {
     setNewTweet('')
   }
 
+  function handleHotKeySubmit(event: KeyboardEvent) {
+    if(event.key === 'Enter' && (event.ctrlKey || event.metaKey)) {
+      setTweets([newTweet, ...tweets])
+      setNewTweet('')
+    }
+  }
+
     return (
         <main className="timeline">          
           <Header title="Home" />
@@ -29,6 +36,7 @@ export function Timeline () {
                id='tweet' 
                placeholder='O que é que há, velhinho?' 
                value={newTweet}
+               onKeyDown={handleHotKeySubmit}
                onChange={(event) => {
                   setNewTweet(event.target.value);
                }}

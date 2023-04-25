@@ -8,7 +8,8 @@ import {
     BookmarkSimple, 
     FileText,
     User, 
-    DotsThreeCircle
+    DotsThreeCircle,
+    Pencil
     } from "@phosphor-icons/react";
 import { NavLink } from "react-router-dom";
 
@@ -20,40 +21,43 @@ export function Sidebar () {
         <nav className='main-navigation'>
           <NavLink to="/">
             <House weight='fill' />
-            Home
-            </NavLink>
+            <span>Home</span>
+          </NavLink>
           <a href="">
             <Hash /> 
-            Explore
+            <span>Explore</span>
           </a>
           <a href="">
             <Bell />
-            Notifications
+            <span>Notifications</span>
           </a>
+          
           <NavLink to="/status">
             <Envelope />
-            Messages
+            <span>Messages</span>
           </NavLink>
+         
           <a href="">
             <BookmarkSimple />
-            Bookmarks
+            <span>Bookmarks</span>
           </a>
           <a href="">
             <FileText />
-            Lists
+            <span>Lists </span>
           </a>
           <a href="">
             <User />
-            Profile
+            <span>Profile</span>
           </a>
           <a href="">
             <DotsThreeCircle />
-            More
+            <span>More</span>
           </a>
         </nav>
 
         <button className='new-tweet' type="button">
-          Tweet
+          <Pencil />
+          <span>Tweet</span>
         </button>
       </aside>
     )

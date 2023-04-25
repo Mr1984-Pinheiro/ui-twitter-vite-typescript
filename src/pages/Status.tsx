@@ -1,15 +1,16 @@
-import { FormEvent, useState } from "react"
+import { FormEvent, KeyboardEvent, useState } from "react"
 import { Header } from "../components/Header"
 import { Separator } from "../components/Separator"
 import { Tweet } from "../components/Tweet"
 import "./Status.css"
+import { PaperPlaneRight } from "@phosphor-icons/react"
 
 export function Status () {
   const [newAnswer, setNewAnswer] = useState(''); 
   const [answers, setAnswers] = useState([
     'Concordo...',
     'Olha, faz sentido',
-    'Parabéns pelo prograsso.'
+    'Parabéns pelo progresso.'
   ]);
 
   function createNewAnswer (event: FormEvent) {
@@ -17,6 +18,13 @@ export function Status () {
 
     setAnswers([newAnswer, ...answers])
     setNewAnswer('')
+  }
+
+  function handleHotKeySubmit(event: KeyboardEvent) {
+    if(event.key === 'Enter' && (event.ctrlKey || event.metaKey)) {
+      setAnswers([newAnswer, ...answers])
+      setNewAnswer('')
+    }
   }
   
     return (
@@ -34,12 +42,18 @@ export function Status () {
                 id='tweet' 
                 placeholder='Tweet your answer' 
                 value={newAnswer}
+                onKeyDown={handleHotKeySubmit}
                 onChange={(event) => {
                   setNewAnswer(event.target.value)
                 }}
               />
             </label>
-            <button type='submit'>Answer</button>
+            <button 
+            type='submit'
+            >
+            <PaperPlaneRight className="paper-plane-right" />
+             <span>Answer</span> 
+            </button>
           </form>
           
 

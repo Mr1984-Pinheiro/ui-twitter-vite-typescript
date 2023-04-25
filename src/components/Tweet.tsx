@@ -1,6 +1,7 @@
 import { ArrowsClockwise, ChatCircle, Heart } from "@phosphor-icons/react";
 import "./Tweet.css";
 import { Link } from "react-router-dom";
+import Usuario from "../assets/usuario.png"
 
 interface TweetProps {
     content: string
@@ -9,12 +10,12 @@ interface TweetProps {
 export function Tweet( props: TweetProps) {
     return(
         <Link to="/status" className="tweet">
-            <img src="https://github.com/diego3g.png" alt="Diego Fernades" />
+            <img src={Usuario} alt="Usuario Tweet" />
 
             <div className="tweet-content">
                 <div className="tweet-content-header">
-                    <strong>Diego Fernandes</strong>
-                    <span>@dieegosf</span>
+                    <strong>Usuario Tweeteiro</strong>
+                    <span>@usuario</span>
                 </div>
                 
                 <p>
